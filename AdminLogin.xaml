@@ -1,0 +1,21 @@
+﻿<Window x:Class="FinalProject.AdminLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalProject"
+        mc:Ignorable="d"
+        Title="AdminLogin" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#FFFFE3E3" Opacity="0.45"/>
+        </Grid.Background>
+        <Label Content="UserName: " FontFamily="Bold" Foreground="Black" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" Margin="117,153,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="username" FontSize="18" HorizontalAlignment="Left" Height="36" Margin="233,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="290"/>
+        <Label Content="Password: " FontFamily="Bold" Foreground="Black" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" Margin="127,237,0,0" VerticalAlignment="Top"/>
+        <PasswordBox Name="password" FontSize="18"  HorizontalAlignment="Left" Height="36" Margin="233,237,0,0" VerticalAlignment="Top" Width="290"/>
+        <Button Click="button_GoLogin" Content="LogIn" HorizontalAlignment="Left" Margin="275,312,0,0" VerticalAlignment="Top" Width="188" Height="45" Background="white" Foreground="Black" FontSize="25" FontFamily="Courier New" BorderThickness="1"/>
+        <Label Content="Admin Account Login" FontFamily="Baskerville,Georgia" Foreground="Black" FontSize="30" HorizontalAlignment="Left" Margin="233,50,0,0" VerticalAlignment="Top"/>
+        <Button Content="Previous" Background="White" HorizontalAlignment="Left" Margin="35,345,0,0" VerticalAlignment="Top" Width="97" Click="Back_btn" Height="34"/>
+    </Grid>
+</Window>
