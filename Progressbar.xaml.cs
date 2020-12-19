@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace FinalProject
 {
@@ -21,26 +22,30 @@ namespace FinalProject
     /// </summary>
     public partial class Progressbar : Window
     {
+        DispatcherTimer dispatcherTimer = new DispatcherTimer();
         public Progressbar()
-        {
-            InitializeComponent();
-            nextPage();
-
-            this.Hide();
-            Entry entry = new Entry();
-            entry.ShowDialog();
-            entry.Close();
-        }
-
-
-        public void nextPage()
-        {
-             void Window_ContentRendered(object sender, EventArgs e)
+           {
+            
+                InitializeComponent();
+                dispatcherTimer.Tick += new EventHandler(dt_Tick);
+                dispatcherTimer.Interval = new TimeSpan(0, 0, 2);
+                dispatcherTimer.Start();
+            }
+            private void dt_Tick(object sender, EventArgs e)
+            {
+                this.Hide();
+                Entry entry = new Entry();
+                entry.ShowDialog();
+                //this.Close();
+                dispatcherTimer.Stop();
+                this.Close();
+            }
+            private void Window_ContentRendered(object sender, EventArgs e)
             {
                 for (int i = 0; i < 100; i++)
                 {
                     pbStatus.Value++;
-                    Thread.Sleep(100);
+                    Thread.Sleep(3000);
                 }
 
             }
@@ -52,25 +57,19 @@ namespace FinalProject
                     Thread.Sleep(3000);
                 }
 
+
+
             }
 
-            void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+
+            private void pbStatus_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
             {
-                pbStatus.Value = e.ProgressPercentage;
-
+                // //this.Hide();
+                // Entry entry = new Entry();
+                // entry.ShowDialog();
+                //// entry.Close();
             }
-        }
-
-
-
-        private void pbStatus_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            //this.Hide();
-            Entry entry = new Entry();
-            entry.ShowDialog();
-            // entry.Close();
         }
     }
-}
 
 

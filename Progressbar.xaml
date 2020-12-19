@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:FinalProject"
         mc:Ignorable="d"
         Title="Progressbar" Height="450" Width="800">
+
     <Grid>
         <Grid.Background>
-            <ImageBrush TileMode="FlipX" ImageSource="2.jpg" Opacity="0.66"/>
+            <ImageBrush TileMode="FlipX" ImageSource="2.jpg" Opacity="0.6"/>
         </Grid.Background>
-        <ProgressBar Minimum="0" Maximum="100" Name="pbStatus" Margin="0,349,0,0" IsIndeterminate="True" ValueChanged="pbStatus_ValueChanged" Grid.ColumnSpan="2" />
-
-
-
+        <ProgressBar Minimum="0" Maximum="100" Name="pbStatus" Margin="0,383,0,0" IsIndeterminate="True" ValueChanged="pbStatus_ValueChanged" />
+        <Label Content="Welcome to our" FontSize="38" Foreground="Blue" FontWeight="Bold" HorizontalAlignment="Left" Margin="258,101,0,0" VerticalAlignment="Top"/>
+        <Label Content="Parking Management System" FontSize="40"  Foreground="Blue" HorizontalAlignment="Left" Margin="148,167,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
