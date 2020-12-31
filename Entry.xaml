@@ -14,6 +14,6 @@
         <Label FontWeight="Bold" Foreground="Beige" FontSize="30" Content="WELCOME TO OUR BEST PARKING SYSTEM"  HorizontalAlignment="Left" Margin="94,10,0,0" VerticalAlignment="Top" Width="623" Height="51"/>
         <Label Content="Please choose your type" FontSize="20" Foreground="ForestGreen" HorizontalAlignment="Left" Margin="280,66,0,0" VerticalAlignment="Top"/>
         <Button Content="Guest" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="452,165,0,0" VerticalAlignment="Top" Width="233" Height="74" Background="White" Foreground="black" Click="Guest_btn"/>
-        <Button Content="Admin Login" Foreground="Green" FontSize="16" HorizontalAlignment="Left" Margin="631,372,0,0" VerticalAlignment="Top" Width="131" Height="37" Click="Button_Click"/>
+        <Button Content="Admin Login" Foreground="Green" FontSize="16" HorizontalAlignment="Left" Margin="631,372,0,0" VerticalAlignment="Top" Width="131" Height="37" Click="Admin_click"/>
     </Grid>
 </Window>

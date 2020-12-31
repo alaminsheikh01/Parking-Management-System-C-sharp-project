@@ -31,20 +31,20 @@ namespace FinalProject
             txtduration.IsEnabled = false;
             txtpayment.IsEnabled = false;
             save.IsEnabled = false;
-            BindataUserName();
+            //BindataUserName();
             TimeUpdater1();
-            Bindata();
+            Bindata(); // sob gula data show table a show korbe
             TimeUpdater();
 
 
 
         }
-        async void TimeUpdater()
+         void TimeUpdater()
         {
 
             intime.Text = DateTime.Now.ToString();
             outtime.Text = DateTime.Now.ToString();
-            await Task.Delay(1000);
+            Task.Delay(1000);
 
         }
         async void TimeUpdater1()
@@ -68,7 +68,7 @@ namespace FinalProject
                 {
                     con.Open();
                     BindataUserName();
-                    string newcon = "insert into CarAdd (carid, cartype, carmodel, duration, payment, slot_book, insertdate) values ('" + carid.Text + "','" + cartype.Text + "','" + model.Text + "', '" +txtduration.Text+ "','" +txtpayment.Text+ "','"+ slotgroup.Text +"' ,getdate())";
+                    string newcon = "insert into CarAdd  ( carid, cartype, carmodel, duration, payment, slot_book, insertdate)  values  ('" + carid.Text + "','" + cartype.Text + "','" + model.Text + "', '" +txtduration.Text+ "','" +txtpayment.Text+ "','"+ slotgroup.Text + "' ,getdate())";
                     SqlCommand cmd = new SqlCommand(newcon, con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Succesfully inserted");
@@ -104,30 +104,7 @@ namespace FinalProject
             //UserNamenext.Content = dt.DefaultView;
 
         }
-        //void TimeShow()
-        //{
-        //    DateTime dtintime = DateTime.Parse(intime.Text);
-        //    DateTime dtouttime = DateTime.Parse(outtime.Text);
-
-        //    float duration = float.Parse((dtouttime - dtintime).TotalMinutes.ToString());
-        //    var span = System.TimeSpan.FromMinutes(duration);
-        //    var hour = ((int)span.TotalHours).ToString();
-        //    var Minute = span.Minutes.ToString();
-        //    txtduration.Text = hour + " Hour: " + "" + Minute +" Min";
-        //    if((duration / 60) > 0)
-        //    {
-        //        if((duration / 60) <= 0.5)
-        //        {
-        //            txtpayment.Text = "" + 0 + "$";
-        //        }
-        //        else
-        //        {
-        //            txtpayment.Text = "" + (duration / 60) * 1 + "$";
-        //        }
-        //    }
-        //}
-
-
+      
 
         void Bindata()
         {
@@ -153,7 +130,7 @@ namespace FinalProject
                 }
                 else
                 {
-                    MessageBox.Show("Please inter carid");
+                    MessageBox.Show("Please enter carid");
                 }
             }
             catch(Exception ex)

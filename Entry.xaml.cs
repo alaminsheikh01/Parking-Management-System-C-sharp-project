@@ -40,16 +40,16 @@ namespace FinalProject
         }
 
 
-        private void Guest_btn(object sender, EventArgs e)
-        {
-            this.Hide();
-            SignUp signup = new SignUp();
-            signup.ShowDialog();
-            this.Close();
+        //private void Guest_btn(object sender, EventArgs e)
+        //{
+        //    this.Hide();
+        //    SignUp signup = new SignUp();
+        //    signup.ShowDialog();
+        //    this.Close();
 
-        }
+        //}
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Admin_click(object sender, RoutedEventArgs e)
         {
             this.Hide();
             AdminLogin signup = new AdminLogin();

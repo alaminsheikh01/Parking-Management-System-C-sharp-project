@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProject"
         mc:Ignorable="d"
-        Title="Admin" Height="500" Width="1000">
+        Title="Admin" Height="600" Width="1000">
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="459" Margin="0,10,0,0" VerticalAlignment="Top" Width="982">
+        <TabControl HorizontalAlignment="Left" Height="549" Margin="0,10,0,0" VerticalAlignment="Top" Width="982">
             <TabItem Header="CarAdd" FontSize="13" Width="200" Background="Green" >
                 <Grid Margin="0,-3,-203,-105">
                     <Grid.Background>
@@ -17,8 +17,8 @@
                             <GradientStop Color="#FF20B808" Offset="0.281"/>
                         </LinearGradientBrush>
                     </Grid.Background>
-                    <Button Content="Save" Name="save" HorizontalAlignment="Left" Margin="28,334,0,0" VerticalAlignment="Top" Width="95" Click="save_Click" Height="35" Background="White"/>
-                    <Button Content="Delete" Name="delete" HorizontalAlignment="Left" Margin="226,334,0,0" VerticalAlignment="Top" Width="96" Click="delete_Click" Height="35"/>
+                    <Button Content="Save" Name="save" HorizontalAlignment="Left" Margin="28,406,0,0" VerticalAlignment="Top" Width="95" Click="save_Click" Height="35" Background="White"/>
+                    <Button Content="Delete" Name="delete" HorizontalAlignment="Left" Margin="226,406,0,0" VerticalAlignment="Top" Width="96" Click="delete_Click" Height="35"/>
                     <Button Content="Search" Name="search" HorizontalAlignment="Left" Margin="268,43,0,0" VerticalAlignment="Top" Width="74" Click="search_Click" Height="26"/>
 
                     <TextBox Name="carid" FontSize="16" HorizontalAlignment="Left" Height="26" Margin="123,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
@@ -28,22 +28,39 @@
                     <Label FontSize="17" Foreground="White" FontWeight="Bold" Content="Car Model: " HorizontalAlignment="Left" Margin="27,112,0,0" VerticalAlignment="Top"/>
                     <Label FontSize="17" Foreground="White" FontWeight="Bold" Content="Car Intime: " HorizontalAlignment="Left" Margin="27,150,0,0" VerticalAlignment="Top"/>
                     <Label FontSize="17" Foreground="White" FontWeight="Bold" Content="Car OutTime: " HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top"/>
-                    <Label FontSize="17" Foreground="White" FontWeight="Bold" Content="Duration: " HorizontalAlignment="Left" Margin="39,229,0,0" VerticalAlignment="Top"/>
-                    <Label FontSize="17" Foreground="White" FontWeight="Bold" Content="Payment: " HorizontalAlignment="Left" Margin="40,267,0,0" VerticalAlignment="Top"/>
-                    <DataGrid Name="dataGridView1" HorizontalAlignment="Left" Height="361" Margin="373,38,0,0" VerticalAlignment="Top" Width="596"/>
-                    <TextBox FontSize="16"  Name="txtduration" HorizontalAlignment="Left" Margin="123,234,0,0" VerticalAlignment="Top" Width="140" Height="26"/>
-                    <TextBox FontSize="16"  Name="txtpayment" HorizontalAlignment="Left" Margin="122,272,0,0" VerticalAlignment="Top" Width="141" Height="26"/>
+                    <Label FontSize="17" Foreground="White" FontWeight="Bold" Content="Duration: " HorizontalAlignment="Left" Margin="39,258,0,0" VerticalAlignment="Top"/>
+                    <Label FontSize="17" Foreground="White" FontWeight="Bold" Content="Payment: " HorizontalAlignment="Left" Margin="40,296,0,0" VerticalAlignment="Top"/>
+                    <DataGrid Name="dataGridView1" HorizontalAlignment="Left" Height="456" Margin="373,38,0,0" VerticalAlignment="Top" Width="596"/>
+                    <TextBox FontSize="16"  Name="txtduration" HorizontalAlignment="Left" Margin="123,263,0,0" VerticalAlignment="Top" Width="140" Height="26"/>
+                    <TextBox FontSize="16"  Name="txtpayment" HorizontalAlignment="Left" Margin="122,301,0,0" VerticalAlignment="Top" Width="141" Height="26"/>
+                    <Button Click="calPayment" Content="Calculate Payment" HorizontalAlignment="Left" Margin="122,352,0,0" VerticalAlignment="Top" Width="141" Height="26"/>
+
                     <ComboBox FontSize="15" Name="cartype" HorizontalAlignment="Left" Margin="122,85,0,0" VerticalAlignment="Top" Width="141">
                         <ComboBoxItem IsSelected="True" Name="small">Small</ComboBoxItem>
                         <ComboBoxItem Name="smallest">Smallest</ComboBoxItem>
                         <ComboBoxItem Name="big">Big</ComboBoxItem>
                         <ComboBoxItem Name="biggest">Biggest</ComboBoxItem>
                     </ComboBox>
-                    <Button Content="Update" x:Name="update" HorizontalAlignment="Left" Margin="128,334,0,0" VerticalAlignment="Top" Width="93" Click="update_Click" Height="35"/>
+                    <Button Content="Update" x:Name="update" HorizontalAlignment="Left" Margin="128,406,0,0" VerticalAlignment="Top" Width="93" Click="update_Click" Height="35"/>
                     <TextBox  x:Name="inTime" HorizontalAlignment="Left" Margin="122,157,0,0" VerticalAlignment="Top" Width="141" Height="26"/>
                     <TextBox  x:Name="outTime" HorizontalAlignment="Left" Margin="122,195,0,0" VerticalAlignment="Top" Width="141" Height="26"/>
-                    <Button Content="Reset" Name="reset" HorizontalAlignment="Left" Margin="146,399,0,0" VerticalAlignment="Top" Width="90" Click="reset_Click" Height="26"/>
-                    <Button Click="Logout" Content="Logout" HorizontalAlignment="Left" Margin="27,399,0,0" VerticalAlignment="Top" Width="96" Height="26"/>
+                    <Label FontSize="17" Foreground="White" FontWeight="Bold" Content="Choose Slot: " HorizontalAlignment="Left" Margin="16,221,0,0" VerticalAlignment="Top"/>
+                    <ComboBox FontSize="15" Name="slotgroup" HorizontalAlignment="Left" Margin="124,227,0,0" VerticalAlignment="Top" Width="141">
+                        <ComboBoxItem IsSelected="True" Name="slot1" Content="Slot 1"/>
+                        <ComboBoxItem Name="slot2" Content="Slot 2"/>
+                        <ComboBoxItem Name="slot3" Content="Slot 3"/>
+                        <ComboBoxItem Name="slot4" Content="Slot 4"/>
+                        <ComboBoxItem Name="slot5" Content="Slot 5"/>
+                        <ComboBoxItem Name="slot6" Content="Slot 6"/>
+                        <ComboBoxItem Name="slot7" Content="Slot 7"/>
+                        <ComboBoxItem Name="slot8" Content="Slot 8"/>
+                        <ComboBoxItem Name="slot9" Content="Slot 9"/>
+                        <ComboBoxItem Name="slot10" Content="Slot 10"/>
+                        <ComboBoxItem Name="slot11" Content="Slot 11"/>
+                        <ComboBoxItem Name="slot12" Content="Slot 12"/>
+                    </ComboBox>
+                    <Button Content="Reset" Name="reset" HorizontalAlignment="Left" Margin="232,468,0,0" VerticalAlignment="Top" Width="90" Click="btn_reset" Height="26"/>
+                    <Button Click="Logout" Content="Logout" HorizontalAlignment="Left" Margin="28,468,0,0" VerticalAlignment="Top" Width="96" Height="26"/>
                 </Grid>
 
             </TabItem>

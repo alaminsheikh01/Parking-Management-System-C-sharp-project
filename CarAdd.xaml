@@ -57,8 +57,8 @@
             <ComboBoxItem Name="slot11" Content="Slot 11"/>
             <ComboBoxItem Name="slot12" Content="Slot 12"/>
         </ComboBox>
-        <Label Name="UserNamenext" FontSize="17" Foreground="White" FontWeight="Bold" Content="" HorizontalAlignment="Left" Margin="442,42,0,0" VerticalAlignment="Top" Width="527" Height="29"/>
-        <Label Content="" Name="timeUp" FontWeight="Bold" Foreground="White" FontSize="17" HorizontalAlignment="Left" Margin="13,42,0,0" VerticalAlignment="Top" Width="286"/>
+        <Label Name="UserNamenext" FontSize="17" Foreground="White" FontWeight="Bold" Content="" HorizontalAlignment="Left" Margin="685,0,0,0" VerticalAlignment="Top" Width="321" Height="29"/>
+        <Label Content="" Name="timeUp" FontWeight="Bold" Foreground="White" FontSize="17" HorizontalAlignment="Left" Margin="442,3,0,0" VerticalAlignment="Top" Width="238"/>
         <Button Click="calPayment" Content="Calculate Payment" HorizontalAlignment="Left" Margin="119,377,0,0" VerticalAlignment="Top" Width="141" Height="26"/>
         <Button Content="Reset" HorizontalAlignment="Left" Margin="265,422,0,0" VerticalAlignment="Top" Width="74" Height="26" Click="btn_reset"/>
 

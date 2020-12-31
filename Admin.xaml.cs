@@ -46,7 +46,7 @@ namespace FinalProject
                 {
                     con.Open();
 
-                    string newcon = "insert into CarAdd (carid, cartype, carmodel, duration, payment, insertdate) values ('" + carid.Text + "','" + cartype.Text + "','" + model.Text + "', '" + txtduration.Text + "','" + txtpayment.Text + "',getdate())";
+                    string newcon = "insert into CarAdd (carid, cartype, carmodel, duration, payment, slot_book, insertdate) values ('" + carid.Text + "','" + cartype.Text + "','" + model.Text + "', '" + txtduration.Text + "','" + txtpayment.Text + "', '" +slotgroup.Text+ "',getdate())";
                     SqlCommand cmd = new SqlCommand(newcon, con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Succesfully inserted");
@@ -207,6 +207,39 @@ namespace FinalProject
             AdminLogin signup = new AdminLogin();
             signup.ShowDialog();
             this.Close();
+        }
+
+        private void calPayment(object sender, RoutedEventArgs e)
+        {
+            DateTime dtintime = DateTime.Parse(inTime.Text);
+            DateTime dtouttime = DateTime.Parse(outTime.Text);
+
+            float duration = float.Parse((dtouttime - dtintime).TotalMinutes.ToString());
+            var span = System.TimeSpan.FromMinutes(duration);
+            var hour = ((int)span.TotalHours).ToString();
+            var Minute = span.Minutes.ToString();
+            txtduration.Text = hour + " Hour: " + "" + Minute + " Min";
+            if ((duration / 60) > 0)
+            {
+                if ((duration / 60) <= 0.5)
+                {
+                    txtpayment.Text = "" + 0 + "$";
+                }
+                else
+                {
+                    txtpayment.Text = "" + (duration / 60) * 1 + "$";
+                }
+            }
+            save.IsEnabled = true;
+        }
+
+        private void btn_reset(object sender, RoutedEventArgs e)
+        {
+            carid.Text = "";
+            model.Text = "";
+            txtduration.Text = "";
+            txtpayment.Text = "";
+            save.IsEnabled = false;
         }
 
 
