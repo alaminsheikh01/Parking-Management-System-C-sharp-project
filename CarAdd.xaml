@@ -35,10 +35,10 @@
         <TextBox Height="26"  Name="txtduration" HorizontalAlignment="Left" Margin="120,308,0,0" VerticalAlignment="Top" Width="141"/>
         <TextBox Height="26"  Name="txtpayment" HorizontalAlignment="Left" Margin="120,346,0,0" VerticalAlignment="Top" Width="142"/>
         <ComboBox FontSize="15" Name="cartype" HorizontalAlignment="Left" Margin="119,124,0,0" VerticalAlignment="Top" Width="141">
-            <ComboBoxItem IsSelected="True" Name="small">Small</ComboBoxItem>
-            <ComboBoxItem Name="smallest">Smallest</ComboBoxItem>
-            <ComboBoxItem Name="big">Big</ComboBoxItem>
-            <ComboBoxItem Name="biggest">Biggest</ComboBoxItem>
+            <ComboBoxItem IsSelected="True" Name="small">CAR</ComboBoxItem>
+            <ComboBoxItem Name="smallest">BIKE</ComboBoxItem>
+            <ComboBoxItem Name="big">SUV</ComboBoxItem>
+            <ComboBoxItem Name="biggest">PICKUP</ComboBoxItem>
         </ComboBox>
         <Label Content="Please Add Your Car or Honda or .. Details" Foreground="White" Background="#FF00C512" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1016" Height="36" FontStyle="Italic" FontSize="20" FontWeight="ExtraBold" TextOptions.TextHintingMode="Animated"/>
         <Button Content="Logout" Click="logout" HorizontalAlignment="Left" Margin="24,422,0,0" VerticalAlignment="Top" Width="80" Height="26"/>
@@ -56,6 +56,10 @@
             <ComboBoxItem Name="slot10" Content="Slot 10"/>
             <ComboBoxItem Name="slot11" Content="Slot 11"/>
             <ComboBoxItem Name="slot12" Content="Slot 12"/>
+            <ComboBoxItem Name="slot13" Content="Slot 13"/>
+            <ComboBoxItem Name="slot14" Content="Slot 14"/>
+            <ComboBoxItem Name="slot15" Content="Slot 15"/>
+            
         </ComboBox>
         <Label Name="UserNamenext" FontSize="17" Foreground="White" FontWeight="Bold" Content="" HorizontalAlignment="Left" Margin="685,0,0,0" VerticalAlignment="Top" Width="321" Height="29"/>
         <Label Content="" Name="timeUp" FontWeight="Bold" Foreground="White" FontSize="17" HorizontalAlignment="Left" Margin="442,3,0,0" VerticalAlignment="Top" Width="238"/>

@@ -139,6 +139,14 @@ namespace FinalProject
             }
         }
 
+        private void slot4_Selected(object sender, RoutedEventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select slot_book from CarAdd where slot_book = ");
+            //select slot_book from CarAdd where slot_book = Slot 1
+
+        }
+
         private void logout(object sender, RoutedEventArgs e)
         {
             this.Hide();
@@ -180,57 +188,7 @@ namespace FinalProject
             save.IsEnabled = false;
         }
 
+       
 
-
-
-        //private void update_Click(object sender, RoutedEventArgs e)
-        //{
-        //    try
-        //    {
-        //        con.Open();
-        //        SqlCommand cmd = new SqlCommand("update CarAdd set carId ='" + carid.Text+ "',cartype = '" + cartype.Text + "', carmodel='" + model.Text + "', updatedate=getdate() where carid='" + carid.Text + "'", con);
-        //        cmd.ExecuteNonQuery();
-
-        //        MessageBox.Show("succesfully updated");
-        //        Bindata();
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        con.Close();
-        //    }
-        //}
-
-        //private void delete_Click(object sender, RoutedEventArgs e)
-        //{
-        //    try
-        //    {
-        //        if (carid.Text != "")
-        //        {
-        //            //if(MessageBox.Show("Are you sure to delete?", "Delete Record", MessageBoxButton.YesNo))
-        //            //{
-
-        //            //}
-        //            con.Open();
-        //            SqlCommand cmd = new SqlCommand("Delete CarAdd where carid = '" + carid.Text + "'", con);
-        //            cmd.ExecuteNonQuery();
-        //            con.Close();
-        //            MessageBox.Show("Succesfully Deleted");
-        //            Bindata();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Please insert carid");
-        //        }
-
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
     }
 }
