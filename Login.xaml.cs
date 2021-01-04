@@ -63,7 +63,7 @@ namespace FinalProject
             {
                 con.Open();
 
-                string newcon = "select UserName from UserAuth where UserName='" + username.Text + "' and Password ='" + password.Password + "'";
+                string newcon = "select * from UserAuth where UserName='" + username.Text + "' and Password ='" + password.Password + "'";
 
                 SqlDataAdapter adp = new SqlDataAdapter(newcon, con);
                 DataSet ds = new DataSet();
